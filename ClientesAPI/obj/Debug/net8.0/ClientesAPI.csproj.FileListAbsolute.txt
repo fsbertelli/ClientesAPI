@@ -31,3 +31,4 @@
 /Users/felipebertelli/ADS/BLAZOR/API/ClientesAPI/obj/Debug/net8.0/ClientesAPI.pdb
 /Users/felipebertelli/ADS/BLAZOR/API/ClientesAPI/obj/Debug/net8.0/ClientesAPI.genruntimeconfig.cache
 /Users/felipebertelli/ADS/BLAZOR/API/ClientesAPI/obj/Debug/net8.0/ref/ClientesAPI.dll
+/Users/felipebertelli/ADS/BLAZOR/API/ClientesAPI/obj/Debug/net8.0/ClientesAPI.sourcelink.json
