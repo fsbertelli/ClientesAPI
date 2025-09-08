@@ -1,3 +1,7 @@
+using System.Net.Mime;
+using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic.CompilerServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +19,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapGet("/info", () => new
+{
+    timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()
+});
 
 
 
