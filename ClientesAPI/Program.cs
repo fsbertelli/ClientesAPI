@@ -1,8 +1,14 @@
 using System.Net.Mime;
 using System.Runtime.CompilerServices;
+using ClientesAPI.Data;
+using ClientesAPI.Endpoints;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionString));
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -19,7 +25,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapClienteEndpoints();
 app.MapGet("/info", () => new
 {
     timestamp = DateTimeOffset.Now.ToUnixTimeSeconds()
